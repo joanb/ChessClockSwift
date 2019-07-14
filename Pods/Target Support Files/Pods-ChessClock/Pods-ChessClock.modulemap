@@ -1,0 +1,6 @@
+framework module Pods_ChessClock {
+  umbrella header "Pods-ChessClock-umbrella.h"
+
+  export *
+  module * { export * }
+}

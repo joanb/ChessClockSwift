@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		408CAAE0C3D5EF02B568291B /* Pods_ChessClockUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C918EE426657E9CFE84D4F /* Pods_ChessClockUITests.framework */; };
+		4A11A20F7739D8AB627DD875 /* Pods_ChessClock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1533C9D67B45E67A4FE518A /* Pods_ChessClock.framework */; };
+		BBECB7782A2BA899AABE06BF /* Pods_ChessClockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B955C0A6279BAFB436F2F65 /* Pods_ChessClockTests.framework */; };
 		E608ED1D22D9F0970021A396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E608ED1C22D9F0970021A396 /* AppDelegate.swift */; };
 		E608ED1F22D9F0970021A396 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E608ED1E22D9F0970021A396 /* ViewController.swift */; };
 		E608ED2222D9F0970021A396 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E608ED2022D9F0970021A396 /* Main.storyboard */; };
@@ -34,6 +37,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B955C0A6279BAFB436F2F65 /* Pods_ChessClockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChessClockTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32C918EE426657E9CFE84D4F /* Pods_ChessClockUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChessClockUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		374A20F824F15CFECE9F4B8C /* Pods-ChessClockUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChessClockUITests.release.xcconfig"; path = "Target Support Files/Pods-ChessClockUITests/Pods-ChessClockUITests.release.xcconfig"; sourceTree = "<group>"; };
+		85B5DF33F946F2B049BE4E5E /* Pods-ChessClock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChessClock.debug.xcconfig"; path = "Target Support Files/Pods-ChessClock/Pods-ChessClock.debug.xcconfig"; sourceTree = "<group>"; };
+		A382806A7DDBC4170E773D6C /* Pods-ChessClockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChessClockTests.debug.xcconfig"; path = "Target Support Files/Pods-ChessClockTests/Pods-ChessClockTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BA86873E414CCB2003F886C4 /* Pods-ChessClockUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChessClockUITests.debug.xcconfig"; path = "Target Support Files/Pods-ChessClockUITests/Pods-ChessClockUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C96EB1691E95E6912C18150C /* Pods-ChessClock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChessClock.release.xcconfig"; path = "Target Support Files/Pods-ChessClock/Pods-ChessClock.release.xcconfig"; sourceTree = "<group>"; };
+		D1533C9D67B45E67A4FE518A /* Pods_ChessClock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChessClock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E608ED1922D9F0970021A396 /* ChessClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChessClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E608ED1C22D9F0970021A396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E608ED1E22D9F0970021A396 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +58,7 @@
 		E608ED3822D9F0990021A396 /* ChessClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E608ED3C22D9F0990021A396 /* ChessClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessClockUITests.swift; sourceTree = "<group>"; };
 		E608ED3E22D9F0990021A396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6F73BF727833C3FB2FF1C92 /* Pods-ChessClockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChessClockTests.release.xcconfig"; path = "Target Support Files/Pods-ChessClockTests/Pods-ChessClockTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A11A20F7739D8AB627DD875 /* Pods_ChessClock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBECB7782A2BA899AABE06BF /* Pods_ChessClockTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				408CAAE0C3D5EF02B568291B /* Pods_ChessClockUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49C0F0DE45F1BD7BFD46DA7D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85B5DF33F946F2B049BE4E5E /* Pods-ChessClock.debug.xcconfig */,
+				C96EB1691E95E6912C18150C /* Pods-ChessClock.release.xcconfig */,
+				A382806A7DDBC4170E773D6C /* Pods-ChessClockTests.debug.xcconfig */,
+				F6F73BF727833C3FB2FF1C92 /* Pods-ChessClockTests.release.xcconfig */,
+				BA86873E414CCB2003F886C4 /* Pods-ChessClockUITests.debug.xcconfig */,
+				374A20F824F15CFECE9F4B8C /* Pods-ChessClockUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4B158374389846FB54A057E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1533C9D67B45E67A4FE518A /* Pods_ChessClock.framework */,
+				0B955C0A6279BAFB436F2F65 /* Pods_ChessClockTests.framework */,
+				32C918EE426657E9CFE84D4F /* Pods_ChessClockUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E608ED1022D9F0970021A396 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +120,8 @@
 				E608ED3022D9F0990021A396 /* ChessClockTests */,
 				E608ED3B22D9F0990021A396 /* ChessClockUITests */,
 				E608ED1A22D9F0970021A396 /* Products */,
+				49C0F0DE45F1BD7BFD46DA7D /* Pods */,
+				4B158374389846FB54A057E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E608ED4122D9F0990021A396 /* Build configuration list for PBXNativeTarget "ChessClock" */;
 			buildPhases = (
+				AFD757C507C46B59DF1542E1 /* [CP] Check Pods Manifest.lock */,
 				E608ED1522D9F0970021A396 /* Sources */,
 				E608ED1622D9F0970021A396 /* Frameworks */,
 				E608ED1722D9F0970021A396 /* Resources */,
+				F481F45D5F0BE36AA2C26539 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +192,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E608ED4422D9F0990021A396 /* Build configuration list for PBXNativeTarget "ChessClockTests" */;
 			buildPhases = (
+				5AE388AF004E34CBE8DE2277 /* [CP] Check Pods Manifest.lock */,
 				E608ED2922D9F0990021A396 /* Sources */,
 				E608ED2A22D9F0990021A396 /* Frameworks */,
 				E608ED2B22D9F0990021A396 /* Resources */,
@@ -167,6 +211,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E608ED4722D9F0990021A396 /* Build configuration list for PBXNativeTarget "ChessClockUITests" */;
 			buildPhases = (
+				598E3E85BD4E7F0E9D34FB99 /* [CP] Check Pods Manifest.lock */,
 				E608ED3422D9F0990021A396 /* Sources */,
 				E608ED3522D9F0990021A396 /* Frameworks */,
 				E608ED3622D9F0990021A396 /* Resources */,
@@ -250,6 +295,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		598E3E85BD4E7F0E9D34FB99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChessClockUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AE388AF004E34CBE8DE2277 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChessClockTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFD757C507C46B59DF1542E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChessClock-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F481F45D5F0BE36AA2C26539 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChessClock/Pods-ChessClock-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChessClock/Pods-ChessClock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E608ED1522D9F0970021A396 /* Sources */ = {
@@ -430,6 +568,7 @@
 		};
 		E608ED4222D9F0990021A396 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85B5DF33F946F2B049BE4E5E /* Pods-ChessClock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +587,7 @@
 		};
 		E608ED4322D9F0990021A396 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C96EB1691E95E6912C18150C /* Pods-ChessClock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +606,7 @@
 		};
 		E608ED4522D9F0990021A396 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A382806A7DDBC4170E773D6C /* Pods-ChessClockTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +628,7 @@
 		};
 		E608ED4622D9F0990021A396 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6F73BF727833C3FB2FF1C92 /* Pods-ChessClockTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +650,7 @@
 		};
 		E608ED4822D9F0990021A396 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA86873E414CCB2003F886C4 /* Pods-ChessClockUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +671,7 @@
 		};
 		E608ED4922D9F0990021A396 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 374A20F824F15CFECE9F4B8C /* Pods-ChessClockUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

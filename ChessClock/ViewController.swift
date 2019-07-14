@@ -23,6 +23,5 @@ class ViewController: UIViewController {
     private func customize() {
         topChrono.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
     }
-
 }
 
