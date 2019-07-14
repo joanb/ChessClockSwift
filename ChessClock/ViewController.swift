@@ -10,11 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var topChrono: UILabel!
+    @IBOutlet weak var bottomChrono: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        customize()
     }
 
+    
+    private func customize() {
+        topChrono.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+    }
 
 }
 
