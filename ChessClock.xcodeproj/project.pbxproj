@@ -17,6 +17,8 @@
 		E608ED2722D9F0990021A396 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E608ED2522D9F0990021A396 /* LaunchScreen.storyboard */; };
 		E608ED3222D9F0990021A396 /* ChessClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E608ED3122D9F0990021A396 /* ChessClockTests.swift */; };
 		E608ED3D22D9F0990021A396 /* ChessClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E608ED3C22D9F0990021A396 /* ChessClockUITests.swift */; };
+		E62210A722DB964200A81DBC /* ClocksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62210A622DB964200A81DBC /* ClocksPresenter.swift */; };
+		E6B540BF22DCFF18009F087E /* ClocksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B540BE22DCFF18009F087E /* ClocksViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		E608ED3822D9F0990021A396 /* ChessClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E608ED3C22D9F0990021A396 /* ChessClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessClockUITests.swift; sourceTree = "<group>"; };
 		E608ED3E22D9F0990021A396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E62210A622DB964200A81DBC /* ClocksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClocksPresenter.swift; sourceTree = "<group>"; };
+		E6B540BE22DCFF18009F087E /* ClocksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClocksViewModel.swift; sourceTree = "<group>"; };
 		F6F73BF727833C3FB2FF1C92 /* Pods-ChessClockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChessClockTests.release.xcconfig"; path = "Target Support Files/Pods-ChessClockTests/Pods-ChessClockTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,7 +103,6 @@
 				BA86873E414CCB2003F886C4 /* Pods-ChessClockUITests.debug.xcconfig */,
 				374A20F824F15CFECE9F4B8C /* Pods-ChessClockUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -138,8 +141,8 @@
 		E608ED1B22D9F0970021A396 /* ChessClock */ = {
 			isa = PBXGroup;
 			children = (
+				E62210A522DB962400A81DBC /* Clocks */,
 				E608ED1C22D9F0970021A396 /* AppDelegate.swift */,
-				E608ED1E22D9F0970021A396 /* ViewController.swift */,
 				E608ED2022D9F0970021A396 /* Main.storyboard */,
 				E608ED2322D9F0990021A396 /* Assets.xcassets */,
 				E608ED2522D9F0990021A396 /* LaunchScreen.storyboard */,
@@ -164,6 +167,16 @@
 				E608ED3E22D9F0990021A396 /* Info.plist */,
 			);
 			path = ChessClockUITests;
+			sourceTree = "<group>";
+		};
+		E62210A522DB962400A81DBC /* Clocks */ = {
+			isa = PBXGroup;
+			children = (
+				E608ED1E22D9F0970021A396 /* ViewController.swift */,
+				E62210A622DB964200A81DBC /* ClocksPresenter.swift */,
+				E6B540BE22DCFF18009F087E /* ClocksViewModel.swift */,
+			);
+			path = Clocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +409,8 @@
 			files = (
 				E608ED1F22D9F0970021A396 /* ViewController.swift in Sources */,
 				E608ED1D22D9F0970021A396 /* AppDelegate.swift in Sources */,
+				E62210A722DB964200A81DBC /* ClocksPresenter.swift in Sources */,
+				E6B540BF22DCFF18009F087E /* ClocksViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,11 +15,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         customize()
     }
+}
 
-    
+extension ViewController: ClockView {
+    func render(viewModel: ClocksViewModel) {
+        topChrono.text = viewModel.topTime
+        bottomChrono.text = viewModel.bottomTime
+    }
+}
+
+private extension ViewController {
+
     private func customize() {
         topChrono.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
     }
