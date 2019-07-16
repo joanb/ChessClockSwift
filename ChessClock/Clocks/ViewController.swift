@@ -12,10 +12,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var topChrono: UILabel!
     @IBOutlet weak var bottomChrono: UILabel!
-    
+    var presenter: ClocksPresenter!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         customize()
+        self.presenter = ClocksPresenter(ui: self)
     }
 }
 

@@ -6,8 +6,8 @@ target 'ChessClock' do
   use_frameworks!
 
   # Pods for ChessClock
-    pod 'RxSwift',    '~> 4.0'
-    pod 'RxCocoa',    '~> 4.0'
+    pod 'RxSwift',    '~> 5'
+    pod 'RxCocoa',    '~> 5'
   target 'ChessClockTests' do
     inherit! :search_paths
     # Pods for testing

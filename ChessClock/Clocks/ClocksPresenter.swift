@@ -25,18 +25,28 @@ enum ClocksEvents {
 class ClocksPresenter {
     
     let ui: ClockView!
-    let observable: Observable<ClocksViewModel>!
-    let clocksStateBehaviourSubject: BehaviorSubject<ClocksEvents>
+    let clocksStateBehaviourSubject = BehaviorSubject<ClocksEvents>(value: .bottomRunning)
+    let disposeBag = DisposeBag()
     
     init(ui: ClockView) {
         self.ui = ui
-        self .clocksStateBehaviourSubject = BehaviorSubject<ClocksEvents>(value: ClocksEvents.pause)
-        self.observable = Observable<ClocksViewModel>.create { observable in
-            return Disposables.create()
-            }.concat(clocksStateBehaviourSubject.asObservable())
-            .scan { nil, accumulator: { previous, modifier -> ClocksViewModel in
-                
-            }.map { $0! }
+        Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
+            .debug("interval")
+            .map { _ -> ClocksViewModel in return ClocksViewModel(running: .bottom, topTime: "5:00", bottomTime: "5:00") }
+            .scan(nil, accumulator: { (previous, current) -> ClocksViewModel in
+                switch current.running {
+                case .top:
+                    print("running top")
+                case .bottom:
+                    print("running bottom")
+                case .none:
+                    print("none")
+                }
+                return previous ?? ClocksViewModel(running: .bottom, topTime: "5:00", bottomTime: "5:00") 
+            })
+            .subscribe(onNext: { viewModel in
+                print(viewModel!.running)
+            }).addDisposableTo(disposeBag)
 }
     
     func onEvent(events: ClocksEvents) {
