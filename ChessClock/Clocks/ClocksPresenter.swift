@@ -30,25 +30,54 @@ class ClocksPresenter {
     
     init(ui: ClockView) {
         self.ui = ui
-        Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
+        Observable<ClocksViewModel?>.concat(
+            Observable.just(ClocksViewModel(running: CurrentRunning.none, topTime: "500", bottomTime: "500")),
+            Observable.merge(
+                Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
+                    .map{_ in nil},
+                clocksStateBehaviourSubject.asObservable()
+                    .map{ event -> ClocksViewModel in
+                        let running: CurrentRunning = {
+                            switch event {
+                            case .bottomRunning:
+                                return .bottom
+                            case .topRunning:
+                                return .top
+                            case .pause:
+                                return .none
+                            case .restart:
+                                return .none
+                            }
+                        }()
+                        return ClocksViewModel(running: running, topTime: "500", bottomTime: "500")
+                }
+            )
+            )
+            
             .debug("interval")
-            .map { _ -> ClocksViewModel in return ClocksViewModel(running: .bottom, topTime: "5:00", bottomTime: "5:00") }
             .scan(nil, accumulator: { (previous, current) -> ClocksViewModel in
-                switch current.running {
+                guard previous != nil else { return current! }
+                var top = previous!.topTime
+                var bottom = previous!.bottomTime
+                switch current?.running ?? previous!.running {
                 case .top:
-                    print("running top")
+                    var toInt = Int(top)!
+                    toInt -= 1
+                    top = String(toInt)
                 case .bottom:
-                    print("running bottom")
+                    var toInt = Int(bottom)!
+                    toInt -= 1
+                    bottom = String(toInt)
                 case .none:
                     print("none")
                 }
-                return previous ?? ClocksViewModel(running: .bottom, topTime: "5:00", bottomTime: "5:00")
+                return ClocksViewModel(running: current?.running ?? previous!.running, topTime: top, bottomTime: bottom)
             })
             .distinctUntilChanged()
             .subscribe(onNext: { viewModel in
                 ui.render(viewModel: viewModel!)
             }).disposed(by: disposeBag)
-}
+    }
     
     func onEvent(events: ClocksEvents) {
         switch events {

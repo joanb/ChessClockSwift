@@ -30,16 +30,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYV-KA-bJp">
+                                <rect key="frame" x="184" y="755" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="bottomClockPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QTi-dS-aud"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ka3-I4-BcJ">
+                                <rect key="frame" x="184" y="105" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="topClockPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="thV-Rd-SVi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nif-G8-BT7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="99" id="0x7-UU-eyQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3rz-yd-IAI" secondAttribute="trailing" constant="8" id="1hh-zt-tQb"/>
+                            <constraint firstItem="ka3-I4-BcJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Kd-uN-7cX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3rz-yd-IAI" secondAttribute="bottom" constant="115" id="CIJ-76-Obk"/>
                             <constraint firstItem="3rz-yd-IAI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Lzn-wH-RfX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nif-G8-BT7" secondAttribute="trailing" constant="8" id="OXF-TQ-Zfu"/>
                             <constraint firstItem="nif-G8-BT7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="WpR-3A-SoX"/>
+                            <constraint firstItem="nif-G8-BT7" firstAttribute="top" secondItem="ka3-I4-BcJ" secondAttribute="bottom" constant="8" id="a58-06-FyJ"/>
                             <constraint firstItem="nif-G8-BT7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="aFg-ve-Tdk"/>
+                            <constraint firstItem="DYV-KA-bJp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ksD-xP-yAF"/>
+                            <constraint firstItem="DYV-KA-bJp" firstAttribute="top" secondItem="3rz-yd-IAI" secondAttribute="bottom" constant="8" id="kvc-lr-ztz"/>
                             <constraint firstItem="nif-G8-BT7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mf8-6q-v8V"/>
                             <constraint firstItem="3rz-yd-IAI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yqz-3b-xbw"/>
                         </constraints>

@@ -19,6 +19,14 @@ class ViewController: UIViewController {
         customize()
         self.presenter = ClocksPresenter(ui: self)
     }
+    @IBAction func topClockPressed(_ sender: Any) {
+        presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.bottomRunning)
+    }
+    @IBAction func bottomClockPressed(_ sender: Any) {
+        presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.topRunning)
+    }
+    
+    
 }
 
 extension ViewController: ClockView {
