@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         customize()
-        self.presenter = ClocksPresenter(ui: self)
+        self.presenter = ClocksPresenter(view: self)
     }
     @IBAction func topClockPressed(_ sender: Any) {
         presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.bottomRunning)
