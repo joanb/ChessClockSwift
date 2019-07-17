@@ -42,11 +42,12 @@ class ClocksPresenter {
                 case .none:
                     print("none")
                 }
-                return previous ?? ClocksViewModel(running: .bottom, topTime: "5:00", bottomTime: "5:00") 
+                return previous ?? ClocksViewModel(running: .bottom, topTime: "5:00", bottomTime: "5:00")
             })
+            .distinctUntilChanged()
             .subscribe(onNext: { viewModel in
-                print(viewModel!.running)
-            }).addDisposableTo(disposeBag)
+                ui.render(viewModel: viewModel!)
+            }).disposed(by: disposeBag)
 }
     
     func onEvent(events: ClocksEvents) {
