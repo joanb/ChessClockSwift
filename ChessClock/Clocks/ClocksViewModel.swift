@@ -12,8 +12,8 @@ struct ClocksViewModel: Equatable {
     let running: CurrentRunning
     let topTime: String
     let bottomTime: String
-    
-    static func == (lhs: ClocksViewModel, rhs: ClocksViewModel) -> Bool{
+
+    static func == (lhs: ClocksViewModel, rhs: ClocksViewModel) -> Bool {
         return (lhs.running == rhs.running &&
             lhs.topTime == rhs.topTime &&
             lhs.bottomTime == rhs.bottomTime)

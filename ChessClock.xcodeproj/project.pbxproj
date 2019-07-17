@@ -16,7 +16,6 @@
 		E608ED2422D9F0990021A396 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E608ED2322D9F0990021A396 /* Assets.xcassets */; };
 		E608ED2722D9F0990021A396 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E608ED2522D9F0990021A396 /* LaunchScreen.storyboard */; };
 		E608ED3222D9F0990021A396 /* ChessClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E608ED3122D9F0990021A396 /* ChessClockTests.swift */; };
-		E608ED3D22D9F0990021A396 /* ChessClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E608ED3C22D9F0990021A396 /* ChessClockUITests.swift */; };
 		E62210A722DB964200A81DBC /* ClocksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62210A622DB964200A81DBC /* ClocksPresenter.swift */; };
 		E6B540BF22DCFF18009F087E /* ClocksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B540BE22DCFF18009F087E /* ClocksViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -58,7 +57,6 @@
 		E608ED3122D9F0990021A396 /* ChessClockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessClockTests.swift; sourceTree = "<group>"; };
 		E608ED3322D9F0990021A396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E608ED3822D9F0990021A396 /* ChessClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E608ED3C22D9F0990021A396 /* ChessClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessClockUITests.swift; sourceTree = "<group>"; };
 		E608ED3E22D9F0990021A396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E62210A622DB964200A81DBC /* ClocksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClocksPresenter.swift; sourceTree = "<group>"; };
 		E6B540BE22DCFF18009F087E /* ClocksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClocksViewModel.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 		E608ED3B22D9F0990021A396 /* ChessClockUITests */ = {
 			isa = PBXGroup;
 			children = (
-				E608ED3C22D9F0990021A396 /* ChessClockUITests.swift */,
 				E608ED3E22D9F0990021A396 /* Info.plist */,
 			);
 			path = ChessClockUITests;
@@ -428,7 +425,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E608ED3D22D9F0990021A396 /* ChessClockUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,19 +24,19 @@ enum ClocksEvents {
 
 class ClocksPresenter {
     
-    let ui: ClockView!
-    let clocksStateBehaviourSubject = BehaviorSubject<ClocksEvents>(value: .bottomRunning)
+    let view: ClockView!
+    let clocksStateBehaviourSubject = BehaviorSubject<ClocksEvents>(value: .pause)
     let disposeBag = DisposeBag()
     
-    init(ui: ClockView) {
-        self.ui = ui
+    init(view: ClockView) {
+        self.view = view
         Observable<ClocksViewModel?>.concat(
             Observable.just(ClocksViewModel(running: CurrentRunning.none, topTime: "500", bottomTime: "500")),
             Observable.merge(
                 Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
-                    .map{_ in nil},
+                    .map { _ in nil },
                 clocksStateBehaviourSubject.asObservable()
-                    .map{ event -> ClocksViewModel in
+                    .map { event -> ClocksViewModel in
                         let running: CurrentRunning = {
                             switch event {
                             case .bottomRunning:
@@ -75,17 +75,8 @@ class ClocksPresenter {
             })
             .distinctUntilChanged()
             .subscribe(onNext: { viewModel in
-                ui.render(viewModel: viewModel!)
+                view.render(viewModel: viewModel!)
             }).disposed(by: disposeBag)
-    }
-    
-    func onEvent(events: ClocksEvents) {
-        switch events {
-        case .topRunning:
-            print("")
-        default:
-            print("")
-        }
     }
 }
 

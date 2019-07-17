@@ -25,8 +25,6 @@ class ViewController: UIViewController {
     @IBAction func bottomClockPressed(_ sender: Any) {
         presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.topRunning)
     }
-    
-    
 }
 
 extension ViewController: ClockView {
@@ -42,4 +40,3 @@ private extension ViewController {
         topChrono.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
     }
 }
-
