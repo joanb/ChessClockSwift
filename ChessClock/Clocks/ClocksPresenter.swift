@@ -34,8 +34,9 @@ class ClocksPresenter {
             Observable.just(ClocksViewModel(running: CurrentRunning.none, topTime: "500", bottomTime: "500")),
             Observable.merge(
                 Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
-                    .map { _ in nil },
-                clocksStateBehaviourSubject.asObservable()
+                    .withLatestFrom(
+                    //.map { _ in nil },
+                clocksStateBehaviourSubject.asObservable())
                     .map { event -> ClocksViewModel in
                         let running: CurrentRunning = {
                             switch event {
