@@ -23,5 +23,6 @@ struct ClocksViewModel: Equatable {
 enum CurrentRunning {
     case top
     case bottom
-    case none
+    case paused
+    case reseted
 }
