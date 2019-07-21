@@ -61,7 +61,7 @@ class ClocksPresenter {
                     toInt -= 1
                     bottom = String(toInt)
                 case .none:
-                    print("none")
+                    return previous!
                 }
                 return ClocksViewModel(running: current?.running ?? previous!.running, topTime: top, bottomTime: bottom)
             })

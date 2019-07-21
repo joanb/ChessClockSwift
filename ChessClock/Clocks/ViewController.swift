@@ -25,6 +25,9 @@ class ViewController: UIViewController {
     @IBAction func bottomClockPressed(_ sender: Any) {
         presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.topRunning)
     }
+    @IBAction func PauseButtonPressed(_ sender: Any) {
+        presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.pause)
+    }
 }
 
 extension ViewController: ClockView {
