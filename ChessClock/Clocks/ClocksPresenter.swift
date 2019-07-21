@@ -10,11 +10,6 @@ import Foundation
 import UIKit
 import RxSwift
 
-enum states {
-    case idle
-    case running
-}
-
 enum ClocksEvents {
     case topRunning
     case bottomRunning
@@ -34,9 +29,7 @@ class ClocksPresenter {
             Observable.just(ClocksViewModel(running: CurrentRunning.none, topTime: "500", bottomTime: "500")),
             Observable.merge(
                 Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
-                    .withLatestFrom(
-                    //.map { _ in nil },
-                clocksStateBehaviourSubject.asObservable())
+                    .withLatestFrom(clocksStateBehaviourSubject.asObservable())
                     .map { event -> ClocksViewModel in
                         let running: CurrentRunning = {
                             switch event {
@@ -54,8 +47,6 @@ class ClocksPresenter {
                 }
             )
             )
-            
-            .debug("interval")
             .scan(nil, accumulator: { (previous, current) -> ClocksViewModel in
                 guard previous != nil else { return current! }
                 var top = previous!.topTime
@@ -75,6 +66,7 @@ class ClocksPresenter {
                 return ClocksViewModel(running: current?.running ?? previous!.running, topTime: top, bottomTime: bottom)
             })
             .distinctUntilChanged()
+            .debug("interval")
             .subscribe(onNext: { viewModel in
                 view.render(viewModel: viewModel!)
             }).disposed(by: disposeBag)
