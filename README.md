@@ -5,5 +5,6 @@
 Open soure project meant to be done full reactivelly. ¡Pull requests are welcome!
 
 Technologies used:
+- Swift 5
 - Pods
 - RxSwift
