@@ -54,11 +54,11 @@ class ClocksPresenter {
                 switch current?.running ?? previous!.running {
                 case .top:
                     var toInt = Int(top)!
-                    toInt -= 1
+                    toInt = toInt >= 1 ? toInt - 1 : 0
                     top = String(toInt)
                 case .bottom:
                     var toInt = Int(bottom)!
-                    toInt -= 1
+                    toInt = toInt >= 1 ? toInt - 1 : 0
                     bottom = String(toInt)
                 case .paused:
                     return previous!
