@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -83,11 +81,17 @@
                     </view>
                     <connections>
                         <outlet property="bottomChrono" destination="3rz-yd-IAI" id="eyD-4b-uhf"/>
+                        <outlet property="bottomClockButton" destination="DYV-KA-bJp" id="aIm-yu-rcl"/>
+                        <outlet property="pauseButton" destination="NBy-HS-jHY" id="ch3-dv-jfm"/>
+                        <outlet property="resetButton" destination="9em-4m-kP5" id="imK-2G-1XF"/>
+                        <outlet property="resetButtonTrailingConstraint" destination="Q1J-N7-38S" id="Rhm-sd-Dt9"/>
                         <outlet property="topChrono" destination="nif-G8-BT7" id="3OG-c4-03K"/>
+                        <outlet property="topClockButton" destination="ka3-I4-BcJ" id="rJo-NH-HH7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="139"/>
         </scene>
     </scenes>
 </document>
