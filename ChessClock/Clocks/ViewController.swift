@@ -76,7 +76,6 @@ extension ViewController {
         } else {
             resetButtonTrailingConstraint.constant = 106
         }
-        
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
