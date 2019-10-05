@@ -60,17 +60,14 @@ private extension ViewController {
 extension ViewController {
     
     private func neededToHide(_ trigger: Bool) {
-        
         let viewsToHide = [topChrono, bottomChrono, topClockButton, bottomClockButton, pauseButton]
         for view in viewsToHide {
             view?.isHidden = trigger
         }
-        
         resetButtonAnimation(trigger)
     }
     
     private func resetButtonAnimation(_ trigger: Bool) {
-        
         if trigger {
             resetButtonTrailingConstraint.constant = (view.frame.width / 2) - (resetButton.frame.width / 2)
         } else {
