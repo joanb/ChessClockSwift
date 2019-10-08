@@ -18,11 +18,11 @@ enum ClocksEvents {
 }
 
 class ClocksPresenter {
-    
+
     let view: ClockView!
     let clocksStateBehaviourSubject = BehaviorSubject<ClocksEvents>(value: .pause)
     let disposeBag = DisposeBag()
-    
+
     init(view: ClockView) {
         self.view = view
         Observable<ClocksViewModel?>.concat(
