@@ -52,12 +52,8 @@ class ClocksPresenter {
             )
             .scan(nil, accumulator: { (previous, current) -> ClocksViewModel in
                 guard previous != nil else { return current! }
-                
                 var currentRunning = current?.running ?? previous!.running
-                if currentRunning == .resumed {
-                    currentRunning = previous!.running
-                }
-                
+                currentRunning = currentRunning == .resumed ? previous!.running : currentRunning
                 var top = previous!.topTime
                 var bottom = previous!.bottomTime
                 switch currentRunning {
