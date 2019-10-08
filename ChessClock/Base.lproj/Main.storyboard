@@ -67,11 +67,13 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="KHb-aR-Aw4"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="YQF-cx-GD9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NBy-HS-jHY" secondAttribute="trailing" constant="105" id="0Ol-ff-Psc"/>
                             <constraint firstItem="nif-G8-BT7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="99" id="0x7-UU-eyQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3rz-yd-IAI" secondAttribute="trailing" constant="8" id="1hh-zt-tQb"/>
                             <constraint firstItem="ka3-I4-BcJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Kd-uN-7cX"/>
@@ -80,6 +82,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YQF-cx-GD9" secondAttribute="trailing" constant="106" id="Jlm-M4-w0b"/>
                             <constraint firstItem="3rz-yd-IAI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Lzn-wH-RfX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nif-G8-BT7" secondAttribute="trailing" constant="8" id="OXF-TQ-Zfu"/>
+                            <constraint firstItem="YQF-cx-GD9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NBy-HS-jHY" secondAttribute="trailing" constant="10" id="Tvk-13-g2c"/>
                             <constraint firstItem="nif-G8-BT7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="WpR-3A-SoX"/>
                             <constraint firstItem="nif-G8-BT7" firstAttribute="top" secondItem="ka3-I4-BcJ" secondAttribute="bottom" constant="8" id="a58-06-FyJ"/>
                             <constraint firstItem="nif-G8-BT7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="aFg-ve-Tdk"/>
