@@ -42,7 +42,6 @@ class ViewController: UIViewController {
 ///       Uncomment row below when logic of resume state will be implemented
 //        pauseState(turnOn: false)
     }
-    
 }
 
 extension ViewController: ClockView {
@@ -62,7 +61,7 @@ private extension ViewController {
 // MARK: - Paused state UI setup extension
 
 private extension ViewController {
-    
+
     private func pauseState(turnOn trigger: Bool) {
         resetButton.isEnabled = trigger
         /// Uncomment row below when logic of resume button will be implemented
