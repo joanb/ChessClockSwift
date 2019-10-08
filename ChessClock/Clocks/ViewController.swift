@@ -39,8 +39,8 @@ class ViewController: UIViewController {
         pauseState(turnOn: false)
     }
     @IBAction func resumeButtonPressed(_ sender: Any) {
-///       Uncomment row below when logic of resume state will be implemented
-//        pauseState(turnOn: false)
+        presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.resume)
+        pauseState(turnOn: false)
     }
 }
 
@@ -64,9 +64,8 @@ private extension ViewController {
 
     private func pauseState(turnOn trigger: Bool) {
         resetButton.isEnabled = trigger
-        /// Uncomment row below when logic of resume button will be implemented
-//        resumeButton.isEnabled = trigger
-//        bottomClockButton.isEnabled = !trigger
-//        topClockButton.isEnabled = !trigger
+        resumeButton.isEnabled = trigger
+        bottomClockButton.isEnabled = !trigger
+        topClockButton.isEnabled = !trigger
     }
 }
