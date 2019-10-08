@@ -46,28 +46,40 @@
                                 <rect key="frame" x="106" y="433" width="42" height="30"/>
                                 <state key="normal" title="Pause"/>
                                 <connections>
-                                    <action selector="PauseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kmw-b4-Q9e"/>
+                                    <action selector="pauseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NzF-gw-cNO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9em-4m-kP5">
-                                <rect key="frame" x="269" y="433" width="39" height="30"/>
-                                <state key="normal" title="Reset"/>
-                                <connections>
-                                    <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NAB-zR-fOl"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="YQF-cx-GD9" userLabel="Paused state">
+                                <rect key="frame" x="253" y="410.5" width="55" height="85"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9em-4m-kP5">
+                                        <rect key="frame" x="0.0" y="0.0" width="55" height="30"/>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NAB-zR-fOl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtt-M6-sh7">
+                                        <rect key="frame" x="0.0" y="55" width="55" height="30"/>
+                                        <state key="normal" title="Resume"/>
+                                        <connections>
+                                            <action selector="resumeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bCF-XR-kjv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="YQF-cx-GD9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NBy-HS-jHY" secondAttribute="trailing" constant="105" id="0Ol-ff-Psc"/>
                             <constraint firstItem="nif-G8-BT7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="99" id="0x7-UU-eyQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3rz-yd-IAI" secondAttribute="trailing" constant="8" id="1hh-zt-tQb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3rz-yd-IAI" secondAttribute="trailing" constant="8" id="1hh-zt-tQb"/>
                             <constraint firstItem="ka3-I4-BcJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Kd-uN-7cX"/>
                             <constraint firstItem="NBy-HS-jHY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="106" id="5my-F4-D1g"/>
-                            <constraint firstItem="9em-4m-kP5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9Er-Xc-KoP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3rz-yd-IAI" secondAttribute="bottom" constant="115" id="CIJ-76-Obk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YQF-cx-GD9" secondAttribute="trailing" constant="106" id="Jlm-M4-w0b"/>
                             <constraint firstItem="3rz-yd-IAI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Lzn-wH-RfX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nif-G8-BT7" secondAttribute="trailing" constant="8" id="OXF-TQ-Zfu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9em-4m-kP5" secondAttribute="trailing" constant="106" id="Q1J-N7-38S"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nif-G8-BT7" secondAttribute="trailing" constant="8" id="OXF-TQ-Zfu"/>
                             <constraint firstItem="nif-G8-BT7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="WpR-3A-SoX"/>
                             <constraint firstItem="nif-G8-BT7" firstAttribute="top" secondItem="ka3-I4-BcJ" secondAttribute="bottom" constant="8" id="a58-06-FyJ"/>
                             <constraint firstItem="nif-G8-BT7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="aFg-ve-Tdk"/>
@@ -75,23 +87,23 @@
                             <constraint firstItem="DYV-KA-bJp" firstAttribute="top" secondItem="3rz-yd-IAI" secondAttribute="bottom" constant="8" id="kvc-lr-ztz"/>
                             <constraint firstItem="NBy-HS-jHY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lic-0r-D7f"/>
                             <constraint firstItem="nif-G8-BT7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mf8-6q-v8V"/>
+                            <constraint firstItem="YQF-cx-GD9" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="suT-ag-jVH"/>
                             <constraint firstItem="3rz-yd-IAI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yqz-3b-xbw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="bottomChrono" destination="3rz-yd-IAI" id="eyD-4b-uhf"/>
+                        <outlet property="bottomChrono" destination="3rz-yd-IAI" id="ewB-BT-BZR"/>
                         <outlet property="bottomClockButton" destination="DYV-KA-bJp" id="aIm-yu-rcl"/>
-                        <outlet property="pauseButton" destination="NBy-HS-jHY" id="ch3-dv-jfm"/>
                         <outlet property="resetButton" destination="9em-4m-kP5" id="imK-2G-1XF"/>
-                        <outlet property="resetButtonTrailingConstraint" destination="Q1J-N7-38S" id="Rhm-sd-Dt9"/>
-                        <outlet property="topChrono" destination="nif-G8-BT7" id="3OG-c4-03K"/>
+                        <outlet property="resumeButton" destination="Vtt-M6-sh7" id="fvh-8G-mnX"/>
+                        <outlet property="topChrono" destination="nif-G8-BT7" id="Llu-FK-mEf"/>
                         <outlet property="topClockButton" destination="ka3-I4-BcJ" id="rJo-NH-HH7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="139"/>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>

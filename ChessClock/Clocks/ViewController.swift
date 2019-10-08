@@ -14,10 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomChrono: UILabel!
     @IBOutlet weak var bottomClockButton: UIButton!
     @IBOutlet weak var topClockButton: UIButton!
-    @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
-    @IBOutlet weak var resetButtonTrailingConstraint: NSLayoutConstraint!
-
+    @IBOutlet weak var resumeButton: UIButton!
+    
     var presenter: ClocksPresenter!
 
     override func viewDidLoad() {
@@ -31,14 +30,19 @@ class ViewController: UIViewController {
     @IBAction func bottomClockPressed(_ sender: Any) {
         presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.topRunning)
     }
-    @IBAction func PauseButtonPressed(_ sender: Any) {
+    @IBAction func pauseButtonPressed(_ sender: Any) {
         presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.pause)
-        neededToHide(true)
+        pauseState(turnOn: true)
     }
     @IBAction func resetButtonPressed(_ sender: Any) {
         presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.restart)
-        neededToHide(false)
+        pauseState(turnOn: false)
     }
+    @IBAction func resumeButtonPressed(_ sender: Any) {
+///       Uncomment row below when logic of resume state will be implemented
+//        pauseState(turnOn: false)
+    }
+    
 }
 
 extension ViewController: ClockView {
@@ -55,26 +59,15 @@ private extension ViewController {
     }
 }
 
-// MARK: - Extension to manage UI showing
+// MARK: - Paused state UI setup extension
 
-extension ViewController {
+private extension ViewController {
     
-    private func neededToHide(_ trigger: Bool) {
-        let viewsToHide = [topChrono, bottomChrono, topClockButton, bottomClockButton, pauseButton]
-        for view in viewsToHide {
-            view?.isHidden = trigger
-        }
-        resetButtonAnimation(trigger)
-    }
-    
-    private func resetButtonAnimation(_ trigger: Bool) {
-        if trigger {
-            resetButtonTrailingConstraint.constant = (view.frame.width / 2) - (resetButton.frame.width / 2)
-        } else {
-            resetButtonTrailingConstraint.constant = 106
-        }
-        UIView.animate(withDuration: 0.3) {
-            self.view.layoutIfNeeded()
-        }
+    private func pauseState(turnOn trigger: Bool) {
+        resetButton.isEnabled = trigger
+        /// Uncomment row below when logic of resume button will be implemented
+//        resumeButton.isEnabled = trigger
+//        bottomClockButton.isEnabled = !trigger
+//        topClockButton.isEnabled = !trigger
     }
 }
