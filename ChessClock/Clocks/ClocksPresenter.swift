@@ -15,6 +15,7 @@ enum ClocksEvents {
     case bottomRunning
     case pause
     case restart
+    case resume
 }
 
 class ClocksPresenter {
@@ -41,6 +42,8 @@ class ClocksPresenter {
                                 return .paused
                             case .restart:
                                 return .reseted
+                            case .resume:
+                                return .resumed
                             }
                         }()
                         return ClocksViewModel(running: running, topTime: "500", bottomTime: "500")
@@ -49,9 +52,15 @@ class ClocksPresenter {
             )
             .scan(nil, accumulator: { (previous, current) -> ClocksViewModel in
                 guard previous != nil else { return current! }
+                
+                var currentRunning = current?.running ?? previous!.running
+                if currentRunning == .resumed {
+                    currentRunning = previous!.running
+                }
+                
                 var top = previous!.topTime
                 var bottom = previous!.bottomTime
-                switch current?.running ?? previous!.running {
+                switch currentRunning {
                 case .top:
                     var toInt = Int(top)!
                     toInt = toInt >= 1 ? toInt - 1 : 0
@@ -64,8 +73,10 @@ class ClocksPresenter {
                     return previous!
                 case .reseted:
                     return ClocksViewModel(running: CurrentRunning.reseted, topTime: "500", bottomTime: "500")
+                case .resumed:
+                    break
                 }
-                return ClocksViewModel(running: current?.running ?? previous!.running, topTime: top, bottomTime: bottom)
+                return ClocksViewModel(running: currentRunning, topTime: top, bottomTime: bottom)
             })
             .distinctUntilChanged()
             .debug("interval")

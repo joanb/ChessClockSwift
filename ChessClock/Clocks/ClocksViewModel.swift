@@ -25,4 +25,5 @@ enum CurrentRunning {
     case bottom
     case paused
     case reseted
+    case resumed
 }
