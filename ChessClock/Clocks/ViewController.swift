@@ -16,7 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var topClockButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var resumeButton: UIButton!
-    
+    @IBOutlet weak var pauseButton: UIButton!
+
     var presenter: ClocksPresenter!
 
     override func viewDidLoad() {
@@ -67,5 +68,6 @@ private extension ViewController {
         resumeButton.isEnabled = trigger
         bottomClockButton.isEnabled = !trigger
         topClockButton.isEnabled = !trigger
+        pauseButton.isEnabled = !trigger
     }
 }
