@@ -28,28 +28,26 @@ class ClocksPresenter {
         self.view = view
         Observable<ClocksViewModel?>.concat(
             Observable.just(ClocksViewModel(running: CurrentRunning.paused, topTime: "500", bottomTime: "500")),
-            Observable.merge(
-                Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
-                    .withLatestFrom(clocksStateBehaviourSubject.asObservable())
-                    .map { event -> ClocksViewModel in
-                        let running: CurrentRunning = {
-                            switch event {
-                            case .bottomRunning:
-                                return .bottom
-                            case .topRunning:
-                                return .top
-                            case .pause:
-                                return .paused
-                            case .restart:
-                                return .reseted
-                            case .resume:
-                                return .resumed
-                            }
-                        }()
-                        return ClocksViewModel(running: running, topTime: "500", bottomTime: "500")
-                }
-            )
-            )
+            Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
+                .withLatestFrom(clocksStateBehaviourSubject.asObservable())
+                .map { event -> ClocksViewModel in
+                    let running: CurrentRunning = {
+                        switch event {
+                        case .bottomRunning:
+                            return .bottom
+                        case .topRunning:
+                            return .top
+                        case .pause:
+                            return .paused
+                        case .restart:
+                            return .reseted
+                        case .resume:
+                            return .resumed
+                        }
+                    }()
+                    return ClocksViewModel(running: running, topTime: "500", bottomTime: "500")
+            }
+        )
             .scan(nil, accumulator: { (previous, current) -> ClocksViewModel in
                 guard previous != nil else { return current! }
                 var currentRunning = current?.running ?? previous!.running
