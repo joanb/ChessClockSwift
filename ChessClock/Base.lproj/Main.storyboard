@@ -98,6 +98,7 @@
                     <connections>
                         <outlet property="bottomChrono" destination="3rz-yd-IAI" id="ewB-BT-BZR"/>
                         <outlet property="bottomClockButton" destination="DYV-KA-bJp" id="aIm-yu-rcl"/>
+                        <outlet property="pauseButton" destination="NBy-HS-jHY" id="aOD-Ll-3Mc"/>
                         <outlet property="resetButton" destination="9em-4m-kP5" id="imK-2G-1XF"/>
                         <outlet property="resumeButton" destination="Vtt-M6-sh7" id="fvh-8G-mnX"/>
                         <outlet property="topChrono" destination="nif-G8-BT7" id="Llu-FK-mEf"/>
