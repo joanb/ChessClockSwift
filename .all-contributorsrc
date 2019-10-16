@@ -32,6 +32,15 @@
         "ideas",
         "code"
       ]
+    },
+    {
+      "login": "Gray-Wind",
+      "name": "Ilia Kolo",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4902794?v=4",
+      "profile": "https://github.com/Gray-Wind",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
