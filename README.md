@@ -1,5 +1,5 @@
 # ChessClockSwift
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors)
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c17fd00a5b0c48bdbb93aacd19a7077b)](https://app.codacy.com/app/joanb/ChessClockSwift?utm_source=github.com&utm_medium=referral&utm_content=joanb/ChessClockSwift&utm_campaign=Badge_Grade_Settings)
 
@@ -21,6 +21,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/l-rettberg"><img src="https://avatars0.githubusercontent.com/u/13290195?v=4" width="100px;" alt="L Rettberg"/><br /><sub><b>L Rettberg</b></sub></a><br /><a href="https://github.com/joanb/ChessClockSwift/commits?author=l-rettberg" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/KarasIlia"><img src="https://avatars1.githubusercontent.com/u/46646536?v=4" width="100px;" alt="Ilia Karas"/><br /><sub><b>Ilia Karas</b></sub></a><br /><a href="https://github.com/joanb/ChessClockSwift/commits?author=KarasIlia" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/EgorKolyshkin"><img src="https://avatars1.githubusercontent.com/u/26576806?v=4" width="100px;" alt="Колышкин Егор"/><br /><sub><b>Колышкин Егор</b></sub></a><br /><a href="#ideas-EgorKolyshkin" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/joanb/ChessClockSwift/commits?author=EgorKolyshkin" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Gray-Wind"><img src="https://avatars0.githubusercontent.com/u/4902794?v=4" width="100px;" alt="Ilia Kolo"/><br /><sub><b>Ilia Kolo</b></sub></a><br /><a href="https://github.com/joanb/ChessClockSwift/commits?author=Gray-Wind" title="Code">💻</a></td>
   </tr>
 </table>
 
