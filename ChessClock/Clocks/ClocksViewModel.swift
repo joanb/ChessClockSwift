@@ -9,7 +9,7 @@
 import Foundation
 
 struct ClocksViewModel: Equatable {
-    let running: CurrentRunning
+    let running: RunningState
     let topTime: Int
     let bottomTime: Int
     var topTimeText: String {
@@ -26,7 +26,7 @@ struct ClocksViewModel: Equatable {
     }
 }
 
-enum CurrentRunning {
+enum RunningState {
     case top
     case bottom
     case paused
