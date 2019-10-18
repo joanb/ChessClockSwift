@@ -33,20 +33,7 @@ class ClocksPresenter {
             Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
                 .withLatestFrom(clocksStateBehaviourSubject.asObservable())
                 .map { event -> ClocksViewModel in
-                    let running: RunningState = {
-                        switch event {
-                        case .bottomRunning:
-                            return .bottom
-                        case .topRunning:
-                            return .top
-                        case .pause:
-                            return .paused
-                        case .restart:
-                            return .reseted
-                        case .resume:
-                            return .resumed
-                        }
-                    }()
+                    let running = RunningState(event: event)
                     return ClocksViewModel(running: running, topTime: kStartingTime, bottomTime: kStartingTime)
             }
         )
