@@ -18,6 +18,8 @@ enum ClocksEvents {
     case resume
 }
 
+let kStartingTime = 500
+
 class ClocksPresenter {
 
     let view: ClockView!
@@ -27,7 +29,7 @@ class ClocksPresenter {
     init(view: ClockView) {
         self.view = view
         Observable<ClocksViewModel?>.concat(
-            Observable.just(ClocksViewModel(running: CurrentRunning.paused, topTime: 500, bottomTime: 500)),
+            Observable.just(ClocksViewModel(running: CurrentRunning.paused, topTime: kStartingTime, bottomTime: kStartingTime)),
             Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
                 .withLatestFrom(clocksStateBehaviourSubject.asObservable())
                 .map { event -> ClocksViewModel in
@@ -45,7 +47,7 @@ class ClocksPresenter {
                             return .resumed
                         }
                     }()
-                    return ClocksViewModel(running: running, topTime: 500, bottomTime: 500)
+                    return ClocksViewModel(running: running, topTime: kStartingTime, bottomTime: kStartingTime)
             }
         )
             .scan(nil, accumulator: { (previous, current) -> ClocksViewModel in
@@ -62,7 +64,7 @@ class ClocksPresenter {
                 case .paused:
                     return previous!
                 case .reseted:
-                    return ClocksViewModel(running: CurrentRunning.reseted, topTime: 500, bottomTime: 500)
+                    return ClocksViewModel(running: CurrentRunning.reseted, topTime: kStartingTime, bottomTime: kStartingTime)
                 case .resumed:
                     break
                 }
