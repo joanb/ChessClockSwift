@@ -58,12 +58,12 @@ class ClocksPresenter {
             })
             .distinctUntilChanged()
             .debug("interval")
-            .subscribe(onNext: { viewModel in
-                view.render(viewModel: viewModel)
+            .subscribe(onNext: { [weak view] viewModel in
+                view?.render(viewModel: viewModel)
             }).disposed(by: disposeBag)
     }
 }
 
-protocol ClockView {
+protocol ClockView: class {
     func render(viewModel: ClocksViewModel)
 }
