@@ -32,4 +32,19 @@ enum RunningState {
     case paused
     case reseted
     case resumed
+    
+    init(event: ClocksEvents) {
+        switch event {
+        case .topRunning:
+            self = .top
+        case .bottomRunning:
+            self = .bottom
+        case .restart:
+            self = .reseted
+        case .pause:
+            self = .paused
+        case .resume:
+            self = .resumed
+        }
+    }
 }
