@@ -27,6 +27,7 @@ class ClocksPresenter {
     let disposeBag = DisposeBag()
 
     init(view: ClockView) {
+        let startState = ClocksViewModel(running: .paused, topTime: kStartingTime, bottomTime: kStartingTime)
         self.view = view
         Observable<ClocksViewModel?>.concat(
             Observable.just(ClocksViewModel(running: RunningState.paused, topTime: kStartingTime, bottomTime: kStartingTime)),
@@ -37,19 +38,18 @@ class ClocksPresenter {
                     return ClocksViewModel(running: running, topTime: kStartingTime, bottomTime: kStartingTime)
             }
         )
-            .scan(nil, accumulator: { (previous, current) -> ClocksViewModel in
-                guard previous != nil else { return current! }
-                var currentRunning = current?.running ?? previous!.running
-                currentRunning = currentRunning == .resumed ? previous!.running : currentRunning
-                var top = previous!.topTime
-                var bottom = previous!.bottomTime
+            .scan(startState, accumulator: { (previous, current) -> ClocksViewModel in
+                var currentRunning = current?.running ?? previous.running
+                currentRunning = currentRunning == .resumed ? previous.running : currentRunning
+                var top = previous.topTime
+                var bottom = previous.bottomTime
                 switch currentRunning {
                 case .top:
                     top = top >= 1 ? top - 1 : 0
                 case .bottom:
                     bottom = bottom >= 1 ? bottom - 1 : 0
                 case .paused:
-                    return previous!
+                    return previous
                 case .reseted:
                     return ClocksViewModel(running: RunningState.reseted, topTime: kStartingTime, bottomTime: kStartingTime)
                 case .resumed:
@@ -60,7 +60,7 @@ class ClocksPresenter {
             .distinctUntilChanged()
             .debug("interval")
             .subscribe(onNext: { viewModel in
-                view.render(viewModel: viewModel!)
+                view.render(viewModel: viewModel)
             }).disposed(by: disposeBag)
     }
 }
