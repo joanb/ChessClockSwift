@@ -28,18 +28,17 @@ class ClocksPresenter {
 
     init(view: ClockView) {
         let startState = ClocksViewModel(running: .paused, topTime: kStartingTime, bottomTime: kStartingTime)
+        
         self.view = view
-        Observable<ClocksViewModel?>.concat(
-            Observable.just(ClocksViewModel(running: RunningState.paused, topTime: kStartingTime, bottomTime: kStartingTime)),
-            Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
-                .withLatestFrom(clocksStateBehaviourSubject.asObservable())
-                .map { event -> ClocksViewModel in
-                    let running = RunningState(event: event)
-                    return ClocksViewModel(running: running, topTime: kStartingTime, bottomTime: kStartingTime)
+        Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
+            .withLatestFrom(clocksStateBehaviourSubject.asObservable())
+            .map { event -> ClocksViewModel in
+                let running = RunningState(event: event)
+                return ClocksViewModel(running: running, topTime: kStartingTime, bottomTime: kStartingTime)
             }
-        )
+            .startWith(startState)
             .scan(startState, accumulator: { (previous, current) -> ClocksViewModel in
-                var currentRunning = current?.running ?? previous.running
+                var currentRunning = current.running
                 currentRunning = currentRunning == .resumed ? previous.running : currentRunning
                 var top = previous.topTime
                 var bottom = previous.bottomTime
