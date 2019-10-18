@@ -12,8 +12,6 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var topChrono: UILabel!
     @IBOutlet weak var bottomChrono: UILabel!
-    @IBOutlet weak var bottomClockButton: UIButton!
-    @IBOutlet weak var topClockButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var resumeButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
@@ -24,11 +22,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         customize()
         self.presenter = ClocksPresenter(view: self)
+
+        topChrono.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(topClockPressed)))
+        bottomChrono.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(bottomClockPressed)))
     }
-    @IBAction func topClockPressed(_ sender: Any) {
+    @objc func topClockPressed() {
         presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.bottomRunning)
     }
-    @IBAction func bottomClockPressed(_ sender: Any) {
+    @objc func bottomClockPressed() {
         presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.topRunning)
     }
     @IBAction func pauseButtonPressed(_ sender: Any) {
@@ -51,11 +52,11 @@ extension ViewController: ClockView {
         bottomChrono.text = viewModel.bottomTimeText
         switch viewModel.running {
         case .top:
-            topClockButton.isEnabled = true
-            bottomClockButton.isEnabled = false
+            topChrono.alpha = 1.0
+            bottomChrono.alpha = 0.5
         case .bottom:
-            topClockButton.isEnabled = false
-            bottomClockButton.isEnabled = true
+            topChrono.alpha = 0.5
+            bottomChrono.alpha = 1.0
         default:
             break
         }
@@ -76,8 +77,8 @@ private extension ViewController {
     private func pauseState(turnOn trigger: Bool) {
         resetButton.isEnabled = trigger
         resumeButton.isEnabled = trigger
-        bottomClockButton.isEnabled = !trigger
-        topClockButton.isEnabled = !trigger
+        topChrono.alpha = 0.5
+        bottomChrono.alpha = 0.5
         pauseButton.isEnabled = !trigger
     }
 }
