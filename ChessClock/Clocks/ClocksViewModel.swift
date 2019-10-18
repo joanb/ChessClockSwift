@@ -32,7 +32,6 @@ enum RunningState {
     case paused
     case reseted
     case resumed
-    
     init(event: ClocksEvents) {
         switch event {
         case .topRunning:
