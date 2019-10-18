@@ -27,7 +27,7 @@ class ClocksPresenter {
     init(view: ClockView) {
         self.view = view
         Observable<ClocksViewModel?>.concat(
-            Observable.just(ClocksViewModel(running: CurrentRunning.paused, topTime: "500", bottomTime: "500")),
+            Observable.just(ClocksViewModel(running: CurrentRunning.paused, topTime: 500, bottomTime: 500)),
             Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
                 .withLatestFrom(clocksStateBehaviourSubject.asObservable())
                 .map { event -> ClocksViewModel in
@@ -45,7 +45,7 @@ class ClocksPresenter {
                             return .resumed
                         }
                     }()
-                    return ClocksViewModel(running: running, topTime: "500", bottomTime: "500")
+                    return ClocksViewModel(running: running, topTime: 500, bottomTime: 500)
             }
         )
             .scan(nil, accumulator: { (previous, current) -> ClocksViewModel in
@@ -56,17 +56,13 @@ class ClocksPresenter {
                 var bottom = previous!.bottomTime
                 switch currentRunning {
                 case .top:
-                    var toInt = Int(top)!
-                    toInt = toInt >= 1 ? toInt - 1 : 0
-                    top = String(toInt)
+                    top = top >= 1 ? top - 1 : 0
                 case .bottom:
-                    var toInt = Int(bottom)!
-                    toInt = toInt >= 1 ? toInt - 1 : 0
-                    bottom = String(toInt)
+                    bottom = bottom >= 1 ? bottom - 1 : 0
                 case .paused:
                     return previous!
                 case .reseted:
-                    return ClocksViewModel(running: CurrentRunning.reseted, topTime: "500", bottomTime: "500")
+                    return ClocksViewModel(running: CurrentRunning.reseted, topTime: 500, bottomTime: 500)
                 case .resumed:
                     break
                 }

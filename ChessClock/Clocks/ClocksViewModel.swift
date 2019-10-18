@@ -10,8 +10,14 @@ import Foundation
 
 struct ClocksViewModel: Equatable {
     let running: CurrentRunning
-    let topTime: String
-    let bottomTime: String
+    let topTime: Int
+    let bottomTime: Int
+    var topTimeText: String {
+        return String(topTime)
+    }
+    var bottomTimeText: String {
+        return String(bottomTime)
+    }
 
     static func == (lhs: ClocksViewModel, rhs: ClocksViewModel) -> Bool {
         return (lhs.running == rhs.running &&

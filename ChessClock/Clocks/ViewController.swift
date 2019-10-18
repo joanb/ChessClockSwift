@@ -47,8 +47,8 @@ class ViewController: UIViewController {
 
 extension ViewController: ClockView {
     func render(viewModel: ClocksViewModel) {
-        topChrono.text = viewModel.topTime
-        bottomChrono.text = viewModel.bottomTime
+        topChrono.text = viewModel.topTimeText
+        bottomChrono.text = viewModel.bottomTimeText
         switch viewModel.running {
         case .top:
             topClockButton.isEnabled = true
