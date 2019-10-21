@@ -51,6 +51,15 @@
         "code",
         "ideas"
       ]
+    },
+    {
+      "login": "shaahin",
+      "name": "Shahin Katebi",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1235629?v=4",
+      "profile": "https://shaahin.us",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
