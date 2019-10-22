@@ -6,6 +6,8 @@
 //  Copyright © 2019 joan barroso. All rights reserved.
 //
 
+import RxCocoa
+import RxSwift
 import UIKit
 
 class ViewController: UIViewController {
@@ -17,12 +19,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var pauseButton: UIButton!
 
     var presenter: ClocksPresenter!
+    let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         customize()
         self.presenter = ClocksPresenter(view: self)
-
+        setupPauseStateObservers()
+        
         topChrono.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(topClockPressed)))
         bottomChrono.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(bottomClockPressed)))
     }
@@ -34,16 +38,27 @@ class ViewController: UIViewController {
     }
     @IBAction func pauseButtonPressed(_ sender: Any) {
         presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.pause)
-        pauseState(turnOn: true)
     }
     @IBAction func resetButtonPressed(_ sender: Any) {
         presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.restart)
-        pauseState(turnOn: false)
     }
     @IBAction func resumeButtonPressed(_ sender: Any) {
         presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.resume)
-        pauseState(turnOn: false)
     }
+    
+    func setupPauseStateObservers() {
+           let pauseOnTriggeer = pauseButton.rx.tap.map({ true })
+
+           let pauseOffTrigger = Observable
+               .merge(resumeButton.rx.tap.asObservable(), resetButton.rx.tap.asObservable())
+               .map({ false })
+
+           Observable.merge(pauseOnTriggeer, pauseOffTrigger)
+               .subscribe(onNext: { [weak self] in
+                   self?.pauseState(turnOn: $0)
+               })
+               .disposed(by: disposeBag)
+       }
 }
 
 extension ViewController: ClockView {
