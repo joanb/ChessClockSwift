@@ -77,9 +77,7 @@ private extension ViewController {
     private func pauseState(turnOn trigger: Bool) {
         resetButton.isEnabled = trigger
         resumeButton.isEnabled = trigger
-        topChrono.alpha = trigger ? 0.5 : 1.0
         topChrono.isUserInteractionEnabled = !trigger
-        bottomChrono.alpha = trigger ? 0.5 : 1.0
         bottomChrono.isUserInteractionEnabled = !trigger
         pauseButton.isEnabled = !trigger
     }
