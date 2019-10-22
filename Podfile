@@ -6,6 +6,7 @@ target 'ChessClock' do
   use_frameworks!
 
   # Pods for ChessClock
+    pod "RxGesture"
     pod 'RxSwift',    '~> 5'
     pod 'RxCocoa',    '~> 5'
   target 'ChessClockTests' do
