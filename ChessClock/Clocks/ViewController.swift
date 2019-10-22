@@ -8,6 +8,7 @@
 
 import RxCocoa
 import RxSwift
+import RxGesture
 import UIKit
 
 class ViewController: UIViewController {
@@ -26,24 +27,30 @@ class ViewController: UIViewController {
         customize()
         self.presenter = ClocksPresenter(view: self)
         setupPauseStateObservers()
-        
-        topChrono.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(topClockPressed)))
-        bottomChrono.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(bottomClockPressed)))
+        setupClockEvent()
     }
-    @objc func topClockPressed() {
-        presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.bottomRunning)
-    }
-    @objc func bottomClockPressed() {
-        presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.topRunning)
-    }
-    @IBAction func pauseButtonPressed(_ sender: Any) {
-        presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.pause)
-    }
-    @IBAction func resetButtonPressed(_ sender: Any) {
-        presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.restart)
-    }
-    @IBAction func resumeButtonPressed(_ sender: Any) {
-        presenter.clocksStateBehaviourSubject.onNext(ClocksEvents.resume)
+    
+    func setupClockEvent() {
+        let startBottom = topChrono.rx.tapGesture()
+            .when(.recognized)
+            .map({ _ in ClocksEvents.bottomRunning })
+            
+        let startTop = bottomChrono.rx.tapGesture()
+            .when(.recognized)
+            .map({ _ in ClocksEvents.topRunning})
+            
+        let pause = pauseButton.rx.tap
+            .map({ _ in ClocksEvents.pause })
+            
+        let restart = resetButton.rx.tap
+            .map({ _ in ClocksEvents.restart })
+            
+        let resume = resumeButton.rx.tap
+            .map({ _ in ClocksEvents.resume })
+            
+        Observable.merge(startTop, startBottom, pause, restart, resume)
+            .bind(to: presenter.clocksStateBehaviourSubject)
+            .disposed(by: disposeBag)
     }
     
     func setupPauseStateObservers() {
