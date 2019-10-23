@@ -28,31 +28,32 @@ class ViewController: UIViewController {
         self.presenter = ClocksPresenter(view: self)
         setupPauseStateObservers()
         setupClockEvent()
+
     }
-    
+
     func setupClockEvent() {
         let startBottom = topChrono.rx.tapGesture()
             .when(.recognized)
             .map({ _ in ClocksEvents.bottomRunning })
-            
+
         let startTop = bottomChrono.rx.tapGesture()
             .when(.recognized)
             .map({ _ in ClocksEvents.topRunning})
-            
+
         let pause = pauseButton.rx.tap
             .map({ _ in ClocksEvents.pause })
-            
+
         let restart = resetButton.rx.tap
             .map({ _ in ClocksEvents.restart })
-            
+
         let resume = resumeButton.rx.tap
             .map({ _ in ClocksEvents.resume })
-            
+
         Observable.merge(startTop, startBottom, pause, restart, resume)
             .bind(to: presenter.clocksStateBehaviourSubject)
             .disposed(by: disposeBag)
     }
-    
+
     func setupPauseStateObservers() {
            let pauseOnTriggeer = pauseButton.rx.tap.map({ true })
 
